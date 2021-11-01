@@ -2,7 +2,7 @@ name: CI Workflow for Next.JS
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
 jobs:
   build-docker-image:
     steps: 

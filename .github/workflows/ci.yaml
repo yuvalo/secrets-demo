@@ -18,5 +18,5 @@ jobs:
           uses: docker/build-push-action@v2
           with:
             push: false
-            tags: user/app:${GITHUB_SHA}        
+            tags: user/app:${{ GITHUB_SHA }}        
     

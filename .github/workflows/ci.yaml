@@ -1,0 +1,21 @@
+name: CI Workflow for Next.JS
+on:
+  push:
+    branches:
+      - 'master'
+jobs:
+  build-docker-image:
+    steps: 
+        - uses: actions/checkout@v2
+        # - name: Login to DockerHub
+        #   uses: docker/login-action@v1 
+        #   with:
+        #     username: ${{ secrets.DOCKERHUB_USERNAME }}
+        #     password: ${{ secrets.DOCKERHUB_TOKEN }}
+        - name: Build and push
+          id: docker_build
+          uses: docker/build-push-action@v2
+          with:
+            push: false
+            tags: user/app:${GITHUB_SHA}        
+    

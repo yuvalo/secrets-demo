@@ -18,6 +18,6 @@ jobs:
           id: docker_build
           uses: docker/build-push-action@v2
           with:
-            push: false
+            push: true
             tags: user/app:${{ github.sha }}        
     

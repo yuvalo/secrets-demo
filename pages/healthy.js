@@ -48,10 +48,10 @@ export default function Healthy({ healthData, recipies }) {
     return (
         <div>
             <Head><title>test</title></Head>
-            <h1>{healthData.name}</h1>
-            <div>Height: {healthData.height}</div>
-            <div>Weight: {healthData.weight}</div>
-            <div>bodyFat: {healthData.bodyFat}</div>
+            {/* <h1>{healthData.name}</h1> */}
+            {/* <div>Height: {healthData.height}</div> */}
+            {/* <div>Weight: {healthData.weight}</div> */}
+            {/* <div>bodyFat: {healthData.bodyFat}</div> */}
             <hr />
             <div>
                 {renderedRecipies}

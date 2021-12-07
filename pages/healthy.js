@@ -54,6 +54,9 @@ export default function Healthy({ healthData, recipies }) {
             {/* <div>bodyFat: {healthData.bodyFat}</div> */}
             <hr />
             <div>
+                Testing the deployment
+            </div>
+            <div>
                 {renderedRecipies}
             </div>
         </div>

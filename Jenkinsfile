@@ -20,6 +20,8 @@ spec:
     tty: true
   - name: kaniko
     image: gcr.io/kaniko-project/executor:latest
+    command:
+    - cat
     volumeMounts:
     - name: docker-config
       mountPath: /kaniko/.docker/

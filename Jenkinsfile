@@ -20,8 +20,8 @@ spec:
     tty: true
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
-    command:
-    - cat
+    entrypoint:
+    - /busybox/cat
     volumeMounts:
     - name: docker-config
       mountPath: /kaniko/.docker/

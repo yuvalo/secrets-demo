@@ -13,15 +13,12 @@ spec:
   # Use service account that can deploy to all namespaces
   serviceAccountName: jenkins
   containers:
-  - name: alpine
-    image: alpine:latest
-    command:
-    - cat
-    tty: true
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
     command:
-    - /busybox/cat
+    - sleep
+    args:
+    - 9999999
     volumeMounts:
     - name: docker-config
       mountPath: /kaniko/.docker/

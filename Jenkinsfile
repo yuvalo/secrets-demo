@@ -18,6 +18,16 @@ spec:
     command:
     - cat
     tty: true
+ - name: kaniko
+    image: gcr.io/kaniko-project/executor:latest
+    volumeMounts:
+    - name: docker-config
+      mountPath: /kaniko/.docker/
+  restartPolicy: Never
+  volumes:
+  - name: docker-config
+    configMap:
+      name: docker-config    
 """
 }
     }
@@ -25,7 +35,9 @@ spec:
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                container("kaniko") {
+                  sh "/kaniko/executor --context='.' --destination='803451143552.dkr.ecr.eu-west-1.amazonaws.com/node-demo:${GIT_REVISION,length=6}'"
+                }
             }
         }
         stage('Test') {

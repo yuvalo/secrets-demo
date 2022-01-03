@@ -18,12 +18,12 @@ spec:
     command:
     - cat
     tty: true
- - name: kaniko
+  - name: kaniko
     image: gcr.io/kaniko-project/executor:latest
     volumeMounts:
     - name: docker-config
       mountPath: /kaniko/.docker/
-  restartPolicy: Never
+    restartPolicy: Never
   volumes:
   - name: docker-config
     configMap:

@@ -36,7 +36,7 @@ spec:
         stage('Build') {
             steps {
                 container("kaniko") {
-                  sh "/kaniko/executor --context='.' --destination='803451143552.dkr.ecr.eu-west-1.amazonaws.com/node-demo:${GIT_REVISION,length=6}'"
+                  sh "/kaniko/executor --context='.' --destination='803451143552.dkr.ecr.eu-west-1.amazonaws.com/node-demo:${GIT_COMMIT[0..7]}'"
                 }
             }
         }

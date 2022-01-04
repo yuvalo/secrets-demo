@@ -40,11 +40,17 @@ spec:
             }
         }
         stage('Test') {
+            input{
+               message "Move to testing?"
+           }     
             steps {
                 echo 'Testing..'
             }
         }
         stage('Deploy') {
+            input{
+               message "Move to deploy?"
+           }               
             steps {
                 echo 'Deploying....'
             }
